@@ -6,12 +6,6 @@ const app = express();
 
 app.use(fileUpload());
 
-const uploadFile = (req, res) => {};
-
-const pdfToJson = () => {};
-
-var pathToPdf = "./src/pdf/ESQUEMA_DE_BENEFICIOS_ASERECKITT_SALUD.pdf";
-
 app.get("/text/:path", (req, res) => {
   const path = `.${req.params.path.replaceAll("-", "/")}`;
   console.log(path);
@@ -31,16 +25,26 @@ app.post("/upload", (req, res) => {
     return res.status(400).json({ msg: "No file was uploaded" });
   }
 
-  const file = req.files.file;
+  const files = req.files.file0;
+  console.log(files);
 
-  file.mv(`${__dirname}/client/public/uploads/${file.name}`, (err) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send(err);
-    }
+  for (let index = 0; index < files.length; index++) {
+    const file = files[index];
 
-    res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+    file.mv(`${__dirname}/uploads/${file.name}`, (err) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send(err);
+      }
+      console.log("success");
+    });
+  }
+
+  const response = files.map((item) => {
+    return { fileName: item.name, filePath: `/uploads/${item.name}` };
   });
+
+  res.json(response);
 });
 
 app.listen(5000, () => console.log("Server started..."));

@@ -4,21 +4,27 @@ import Progress from "./Progress";
 import axios from "axios";
 
 const FileUpload = () => {
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState([]);
   const [filename, setFilename] = useState("Choose File");
   const [uploadedFile, setUploadedFile] = useState({});
   const [message, setMessage] = useState("");
   const [uploadPercentage, setUploadPercentage] = useState(0);
 
+  const [parsedfFiles, setParsedFiles] = useState([]);
+
   const onChange = (e) => {
-    setFile(e.target.files[0]);
+    const files = [...file, e.target.files[0]];
+    setFile(files);
     setFilename(e.target.files[0].name);
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("file", file);
+
+    for (let index = 0; index < file.length; index++) {
+      formData.append(`file${0}`, file[index]);
+    }
 
     try {
       const res = await axios.post("/upload", formData, {
@@ -35,17 +41,22 @@ const FileUpload = () => {
         },
       });
 
-      const { fileName, filePath } = res.data;
-      setUploadedFile({ fileName, filePath });
       setMessage("File uploaded");
-      console.log(filePath.replaceAll("/", "-"));
 
-      fetch(`/text/${filePath.replaceAll("/", "-")}`)
-        .then((res) => {
-          console.log(res);
-          return res.json();
-        })
-        .then((data) => console.log(data));
+      res.data.map((file) => {
+        const { fileName, filePath } = file;
+
+        fetch(`/text/${filePath.replaceAll("/", "-")}`)
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            setParsedFiles([...parsedfFiles, data]);
+          });
+      });
+
+      //setUploadedFile({ fileName, filePath });
     } catch (err) {
       if (err.response.status === 500) {
         setMessage("There was a problem witht he server");
@@ -79,6 +90,13 @@ const FileUpload = () => {
           className="btn btn-primary btn-block mt-4"
         />
       </form>
+      {file.length > 0 && (
+        <ul>
+          {file.map((item) => {
+            return <li key={item.name.replaceAll(" ", "")}>{item.name}</li>;
+          })}
+        </ul>
+      )}
       {uploadedFile ? (
         <div className="row mt-5">
           <div className="col-md-6 m-auto"></div>
