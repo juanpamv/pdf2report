@@ -46,4 +46,21 @@ app.post("/upload", (req, res) => {
   res.json(response);
 });
 
+app.get("/produce-xslx", (req, res) => {
+  try {
+    const stringsTemplate = fs.readFileSync(
+      "xslx-template/xl/sharedStrings.xml",
+      "utf-8"
+    );
+    console.log("Read file content: " + stringsTemplate);
+    const result = ejs.render(stringsTemplate, {
+      area_geografica_cobertura: "Parrita",
+    });
+    console.log("Result of rendering: " + result);
+    res.send(result);
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 app.listen(5000, () => console.log("Server started..."));

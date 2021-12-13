@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="256" uniqueCount="153">
+    <si>
+        <t xml:space="preserve">BENEFICIOS ACTUALES</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Nombre del cliente</t>
+    </si>
+    <si>
+        <t xml:space="preserve">ASERECKITT</t>
+    </si>
+    <si>
+        <t xml:space="preserve">OTROS DATOS</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Industria</t>
+    </si>
+    <si>
+        <t xml:space="preserve">ASOCIACION SOLIDARISTAS</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Aseguradora Actual</t>
+    </si>
+    <si>
+        <t xml:space="preserve">INS</t>
+    </si>
+    <si>
+        <t xml:space="preserve">CANTIDAD DE EMPLEADOS ACTIVOS</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Esta asegurado todo el personal o solo ciertas clases? </t>
+    </si>
+    <si>
+        <t xml:space="preserve">Todo el personal</t>
+    </si>
+    <si>
+        <t xml:space="preserve">CANTIDAD DE EMPLEADOS ASEGURADOS</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Tiene este clientes varios &quot;planes/clases&quot; ?</t>
+    </si>
+    <si>
+        <t xml:space="preserve">No</t>
+    </si>
+    <si>
+        <t xml:space="preserve">CANTIDAD DE VIDAS CUBIERTAS</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Clase</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Este espacio es para validar si todos los empleados están asegurados, o bien, si existen diferencias, porque. </t>
+    </si>
+    <si>
+        <t xml:space="preserve">Primas</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Indicar primas mensuales</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Asegurado solo</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Asegurado solo + 1</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Asegurado solo + 2 o mas</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Contribución</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Pago de primas empleados</t>
+    </si>
+    <si>
+        <t xml:space="preserve">No contributiva / Contributiva (indicar % pagado por el empleado)</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Elegibilidad de dependientes</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Se permite el ingreso de dependientes?</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Pago de primas Dependientes</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Periodo de espera para ingreso a la poliza</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Generales</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Area geografica de cobertura</t>
+    </si>
+    <si>
+        <t xml:space="preserve">
+            <%= area_geografica_cobertura%></t>
+</si>
+<si>
+<t xml:space="preserve">Suma asegurada anual renovable</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Co-aseguros</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Dentro de la red: 90% ambulatorios &#10;80% Hospitalizacion &#10;Fuera de la red preautorizado: 30% &#10;Fuera de la red sin preautorizar: 40% </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Stop Loss </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Local </t>
+        </si>
+        <si>
+            <t xml:space="preserve">International </t>
+        </si>
+        <si>
+            <t xml:space="preserve">N/A</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Deducible</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Internacional</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Cargos de Hospital</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Cuarto y Alimentación diario Local</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Cuarto y Alimentación diario Internacional</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Cuidados  Intensivos Local</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Cuidados  Intensivos Internacional</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Servicios de Hospital (Misceláneos)</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Aplica coaseguro</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Honorarios del Cirujano</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Honorarios  de Cirujano Asistente</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Honorarios de Anestesia</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Visitas médicas en el hospital- Cuarto Normal</t>
+        </si>
+        <si>
+            <t xml:space="preserve">URA</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Visitas médicas en el hospital- UCI</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Urgencias</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Urgencia por Accidente</t>
+        </si>
+        <si>
+            <t xml:space="preserve">100% en las primeras 24 horas.</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Urgencia por Enfermedad Critico Detallada</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Urgencia por Enfermedad Critico NO Detallada</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Gastos Ambulatorios</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Medico General</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Copago de $20</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Medico Especialista</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Medicinas Recetadas</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Rayos X y Laboratorios</t>
+        </si>
+        <si>
+            <t xml:space="preserve">80% - 20%</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Atención Medica Primaria </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Maternidad</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Periodo de Espera</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Cesárea</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Parto Normal</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Aborto Espontaneo</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Amenaza de Aborto</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Complicaciones del embarazo </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Beneficio recién Nacido Sano (pediatra)</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Cuidado Critico Neonatal </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Elegibilidad del recién nacido sano o no</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Medicina Preventiva </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Control de Niño Sano </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Control urologico </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Control ginecologico</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Estudios Detección de Diabetes </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Salpingectomia</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Vasectomía</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Chequeo Médico General</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Cobertura Dental </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Solo por accidente</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Chequeo Óptico (lentes)</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Chequeo Oftalmológico (fonde de ojo)</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Vacuna contra la influenza</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Plan Wellness</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Wellbing</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Employee Assitance Program (EAP)</t>
+        </si>
+        <si>
+            <t xml:space="preserve">ENCUESTA</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Otros Beneficios</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Transporte Ambulancias Terrestre</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Transporte Ambulancias Aérea Local</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Transporte Ambulancias Aérea Internacional</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Terapias Físicas </t>
+        </si>
+        <si>
+            <t xml:space="preserve">20 sesiones por evento</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Tratamiento de Alergias</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Zapatos Ortopédicos</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Extracción de Terceras Molares</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Trasplante de Órganos </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Beneficio de Psiquiatría</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Beneficio de Psicología</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Apnea del sueño</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Anticonceptivos </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Enfermedades epidémicas o pandémicas</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Práctica recreativa de buceo</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Práctica recreativo de fútbol</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Deportes</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Prótesis quirúrgicas</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Medicina preventiva </t>
+        </si>
+        <si>
+            <t xml:space="preserve">Tratamiento por alcohol y drogas</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Enfermedades de transmision sexual</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Aparatos / Equipo ortopedico</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Enfermería en el hogar</t>
+        </si>
+        <si>
+            <t xml:space="preserve">30 días</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Preexistencias</t>
+        </si>
+        <si>
+            <t xml:space="preserve">6 meses</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Cobertura de VIH Vitalicio</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Participación de utilidades / comision por cobranza</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Corredor de Seguros: Comercial de Seguros Corredores de Seguros S.A.</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Licencia: 11-111</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Descuentos en gimnasios</t>
+        </si>
+        <si>
+            <t xml:space="preserve">En caso de tener clientes con cobertura para dependientes por favor indicarlos en el cuadro &quot;comentarios&quot;</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Indicar tarifa mensual por millar</t>
+        </si>
+        <si>
+            <t xml:space="preserve">No contributiva</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Suma asegurada</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Minimo</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Suma fija</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Suma libre sin requisitos medicos</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Maximo</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Muerte y Desmembramiento Accidental</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Doble indeminización</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Incapacidad Total y Permanente</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Incluido</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Pago adelantado del seguro de Vida en caso de enfermedad terminal</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Adelanto de Gastos Funerarios</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Periodos de espera/carencia</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Disputabilidad</t>
+        </si>
+        <si>
+            <t xml:space="preserve">1 año</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Suicidio</t>
+        </si>
+        <si>
+            <t xml:space="preserve">VIH/SIDA</t>
+        </si>
+        <si>
+            <t xml:space="preserve">8 año</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Covid-19</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Sin periodo de espera</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Comentarios</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Tipo I - Preventivo</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Tipo II - Restaurativo</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Tipo III - Servicios Mayores</t>
+        </si>
+        <si>
+            <t xml:space="preserve">Tipo IV - Ortodoncia</t>
+        </si>
+    </sst>
