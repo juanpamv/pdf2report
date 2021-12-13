@@ -43,20 +43,19 @@ const FileUpload = () => {
 
       setMessage("File uploaded");
 
+      let promiseArray = [];
+
       res.data.map((file) => {
         const { fileName, filePath } = file;
 
-        fetch(`/text/${filePath.replaceAll("/", "-")}`)
-          .then((res) => {
+        promiseArray.push(
+          fetch(`/text/${filePath.replaceAll("/", "-")}`).then((res) => {
             return res.json();
           })
-          .then((data) => {
-            console.log(data);
-            setParsedFiles([...parsedfFiles, data]);
-          });
+        );
       });
 
-      //setUploadedFile({ fileName, filePath });
+      Promise.all(promiseArray).then((data) => setParsedFiles([...data]));
     } catch (err) {
       if (err.response.status === 500) {
         setMessage("There was a problem witht he server");
@@ -64,6 +63,21 @@ const FileUpload = () => {
         setMessage(err.response.data.msg);
       }
     }
+  };
+
+  const matchData = (array) => {
+    console.log(parsedfFiles[0][0]);
+
+    /*if Array.isArray(parsedfFiles)){
+
+    }*/
+
+    console.log(
+      parsedfFiles[0][1].findIndex((cell) => {
+        console.log(cell);
+        return cell === "Costa Rica y Centroamérica";
+      })
+    );
   };
 
   return (
@@ -102,6 +116,7 @@ const FileUpload = () => {
           <div className="col-md-6 m-auto"></div>
           <h3 classNAme="text-center">{uploadedFile.fileName}</h3>
           <img style={{ width: "100%" }} src={uploadedFile.filePath} alt="" />
+          <button onClick={matchData}>Match Data</button>
         </div>
       ) : null}
     </Fragment>

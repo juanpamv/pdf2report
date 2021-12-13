@@ -11,7 +11,6 @@ app.get("/text/:path", (req, res) => {
   console.log(path);
 
   pdf2Text(path).then(function (pages) {
-    console.log("hello");
     console.log(pages);
     //pages is an array of string arrays
     //loosely corresponding to text objects within the pdf
