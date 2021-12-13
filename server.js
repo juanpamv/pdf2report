@@ -1,6 +1,10 @@
 const express = require("express");
 const fileUpload = require("express-fileupload");
 var pdf2Text = require("pdf2text");
+const ejs = require("ejs");
+const fs = require("fs-extra");
+const zlib = require("zlib");
+const gzip = zlib.createGzip();
 
 const app = express();
 
@@ -46,21 +50,68 @@ app.post("/upload", (req, res) => {
   res.json(response);
 });
 
+const templateSourcePath = "xslx-template";
+const sharedStrings = "/xl/sharedStrings.xml";
+const sheet1 = "/xl/worksheets/sheet1.xml";
+const sheet2 = "/xl/worksheets/sheet2.xml";
+const sheet3 = "/xl/worksheets/sheet3.xml";
+
 app.get("/produce-xslx", (req, res) => {
   try {
-    const stringsTemplate = fs.readFileSync(
-      "xslx-template/xl/sharedStrings.xml",
-      "utf-8"
-    );
-    console.log("Read file content: " + stringsTemplate);
-    const result = ejs.render(stringsTemplate, {
+    const sessionKey = "session1"; // TODO obtain session key from request
+
+    const destinationPath = setupXSLXTempDir(sessionKey);
+
+    const values = {
       area_geografica_cobertura: "Parrita",
-    });
-    console.log("Result of rendering: " + result);
+    };
+
+    renderTemplatedFile(
+      templateSourcePath + sharedStrings,
+      destinationPath + sharedStrings,
+      values
+    );
+    renderTemplatedFile(
+      templateSourcePath + sharedStrings,
+      destinationPath + sheet1,
+      values
+    );
+    renderTemplatedFile(
+      templateSourcePath + sharedStrings,
+      destinationPath + sheet2,
+      values
+    );
+    renderTemplatedFile(
+      templateSourcePath + sharedStrings,
+      destinationPath + sheet3,
+      values
+    );
+
+    const input = fs.createReadStream(destinationPath);
+    const output = fs.createWriteStream(destinationPath + ".xslx");
+    input.pipe(gzip).pipe(output);
+
     res.send(result);
   } catch (err) {
     console.error(err);
   }
 });
+
+function setupXSLXTempDir(sessionID) {
+  const tmpTemplatePath = "tmp/xslx-template-" + sessionID;
+  fs.removeSync(tmpTemplatePath);
+  fs.copySync(templateSourcePath, tmpTemplatePath);
+  fs.removeSync(tmpTemplatePath + sharedStrings);
+  fs.removeSync(tmpTemplatePath + sheet1);
+  fs.removeSync(tmpTemplatePath + sheet2);
+  fs.removeSync(tmpTemplatePath + sheet3);
+  return tmpTemplatePath;
+}
+
+function renderTemplatedFile(sourceTemplate, destinationFile, values) {
+  const template = fs.readFileSync(sourceTemplate, "utf-8");
+  const result = ejs.render(template, values);
+  fs.outputFileSync(destinationFile, result);
+}
 
 app.listen(5000, () => console.log("Server started..."));
