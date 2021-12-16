@@ -65,19 +65,54 @@ const FileUpload = () => {
     }
   };
 
-  const matchData = (array) => {
-    console.log(parsedfFiles[0][0]);
+  const mapData = () => {
+    const keys = [
+      "Ámbito de Cobertura",
+      "Beneficio máximo anual por persona",
+      "Tarifa diaria máxima por cuarto normal",
+      "Tarifa diaria máxima en unidad de cuidados intensivos",
+      "Lentes o anteojos (Sólo Asegurados Directos)",
+      "Transporte en ambulancia aérea",
+      "Terapias",
+      "Tratamiento de Alergias",
+      "Ámbito de Cobertura",
+      "Beneficio máximo anual por persona",
+      "Costa Rica y Centroamérica",
+      "Se aplica un coaseguro del",
+      "Tarifa diaria máxima por cuarto normal",
+      "Tarifa diaria máxima en unidad de cuidados intensivos",
+      "Trasplante de órganos (Monto Vitalicio)",
+      "Enfermedades epidémicas o pandémicas",
+      "Práctica recreativa de buceo",
+      "Práctica recreativo de fútbol ",
+      "h. Prótesis quirúrgicas",
+      "Aparatos de apoyo",
+      "Cuidados en el Hogar",
+    ];
 
-    /*if Array.isArray(parsedfFiles)){
+    const map = keys.map((key) => {
+      return [key, getValue(key)];
+    });
 
-    }*/
+    console.log(map);
+  };
 
-    console.log(
-      parsedfFiles[0][1].findIndex((cell) => {
-        console.log(cell);
-        return cell === "Costa Rica y Centroamérica";
-      })
-    );
+  const getValue = (string) => {
+    let arr = [];
+
+    parsedfFiles.map((item) => {
+      item.map((subItem) => {
+        arr = [...arr, ...subItem];
+      });
+    });
+
+    console.log(arr);
+
+    const index = arr.findIndex((cell, index) => {
+      return cell.includes(string);
+    });
+
+    return arr[index + 1];
   };
 
   return (
@@ -116,7 +151,7 @@ const FileUpload = () => {
           <div className="col-md-6 m-auto"></div>
           <h3 classNAme="text-center">{uploadedFile.fileName}</h3>
           <img style={{ width: "100%" }} src={uploadedFile.filePath} alt="" />
-          <button onClick={matchData}>Match Data</button>
+          <button onClick={mapData}>Match Data</button>
         </div>
       ) : null}
     </Fragment>

@@ -8320,6 +8320,7 @@
     "text-table" "0.2.0"
 
 "react-dom@^16.10.2":
+  "integrity" "sha512-kWGDcH3ItJK4+6Pl9DZB16BXYAZyrYQItU4OMy0jAkv5aNqc+mAKb4TpFtAteI6TJZu+9ZlNhaeNQSVQDHJzkw=="
   "version" "16.10.2"
   dependencies:
     "loose-envify" "^1.1.0"
@@ -8399,6 +8400,7 @@
     "fsevents" "2.0.7"
 
 "react@^16.0.0", "react@^16.10.2":
+  "integrity" "sha512-MFVIq0DpIhrHFyqLU0S3+4dIcBhhOvBE8bJ/5kHPVOVaGdo0KuiQzpcjCPsf585WvhypqtrMILyoE2th6dT+Lw=="
   "version" "16.10.2"
   dependencies:
     "loose-envify" "^1.1.0"
