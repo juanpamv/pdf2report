@@ -2,6 +2,9 @@ const express = require("express");
 const fileUpload = require("express-fileupload");
 var pdf2Text = require("pdf2text");
 
+const PDFExtract = require("pdf.js-extract").PDFExtract;
+const pdfExtract = new PDFExtract();
+
 const app = express();
 
 app.use(fileUpload());
@@ -9,13 +12,32 @@ app.use(fileUpload());
 app.get("/text/:path", (req, res) => {
   const path = `.${req.params.path.replaceAll("-", "/")}`;
   console.log(path);
+  const options = {
+    verbosity: 100,
+    disableCombineTextItems: false,
+    normalizeWhitespace: true,
+  };
 
-  pdf2Text(path).then(function (pages) {
-    console.log(pages);
-    //pages is an array of string arrays
-    //loosely corresponding to text objects within the pdf
-    res.json(pages);
-  });
+  if (path.includes("ESQUEMA_DE_BENEFICIOS")) {
+    pdf2Text(path).then(function (pages) {
+      console.log("tipo 1:");
+      res.json(pages);
+    });
+  } else {
+    pdfExtract.extract(path, options, (err, data) => {
+      console.log("tipo 2:");
+      if (err) return console.log(err);
+      res.json(
+        data.pages.map((page) =>
+          page.content
+            .filter((line) => {
+              if (line.str !== " ") return line.str;
+            })
+            .map((line) => line.str)
+        )
+      );
+    });
+  }
 });
 
 // Upload endpoint
@@ -30,7 +52,7 @@ app.post("/upload", (req, res) => {
   for (let index = 0; index < files.length; index++) {
     const file = files[index];
 
-    file.mv(`${__dirname}/uploads/${file.name}`, (err) => {
+    file.mv(`${__dirname}/uploads/${Date.now()}_${file.name}`, (err) => {
       if (err) {
         console.error(err);
         return res.status(500).send(err);
@@ -40,7 +62,10 @@ app.post("/upload", (req, res) => {
   }
 
   const response = files.map((item) => {
-    return { fileName: item.name, filePath: `/uploads/${item.name}` };
+    return {
+      fileName: `${Date.now()}_${item.name}`,
+      filePath: `/uploads/${Date.now()}_${item.name}`,
+    };
   });
 
   res.json(response);
