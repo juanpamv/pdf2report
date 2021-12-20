@@ -29,6 +29,7 @@
     "pdf.js-extract": "^0.1.5",
     "pdf2text": "^1.1.0",
     "underscore": "^1.13.1",
+    "xlsx": "^0.17.4",
     "xmldom": "^0.6.0"
   },
   "devDependencies": {

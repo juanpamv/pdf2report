@@ -1,6 +1,7 @@
 const express = require("express");
 const fileUpload = require("express-fileupload");
 var pdf2Text = require("pdf2text");
+const reader = require("xlsx");
 
 const PDFExtract = require("pdf.js-extract").PDFExtract;
 const pdfExtract = new PDFExtract();
@@ -69,6 +70,39 @@ app.post("/upload", (req, res) => {
   });
 
   res.json(response);
+});
+
+// Upload endpoint
+app.get("/generate-file", (req, res) => {
+  const file = reader.readFile(
+    `${__dirname}/template/DETALLE_DE_COBERTURAS.xls`,
+    { bookType: "xls", cellStyles: true, sheetStubs: true }
+  );
+
+  // Sample data set
+  let student_data = [
+    {
+      Student: "Nikhil",
+      Age: 22,
+      Branch: "ISE",
+      Marks: 70,
+    },
+    {
+      Name: "Amitha",
+      Age: 21,
+      Branch: "EC",
+      Marks: 80,
+    },
+  ];
+
+  const ws = reader.utils.json_to_sheet(student_data);
+
+  reader.utils.book_append_sheet(file, ws, "Sheet3");
+
+  // Writing to our file
+  reader.writeFile(file, "./test.xlsx", { Props });
+
+  res.json(file);
 });
 
 app.listen(5000, () => console.log("Server started..."));
