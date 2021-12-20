@@ -1,6 +1,7 @@
 const express = require("express");
 const fileUpload = require("express-fileupload");
 var pdf2Text = require("pdf2text");
+const Excel = require("exceljs");
 
 const PDFExtract = require("pdf.js-extract").PDFExtract;
 const pdfExtract = new PDFExtract();
@@ -69,6 +70,31 @@ app.post("/upload", (req, res) => {
   });
 
   res.json(response);
+});
+
+// generate data
+app.get("/generate-file", async (req, res) => {
+  const workbook = new Excel.Workbook();
+  workbook.properties.date1904 = true;
+
+  await workbook.xlsx.readFile(
+    `${__dirname}/template/DETALLE_DE_COBERTURAS.xls`
+  );
+
+  console.log(workbook);
+
+  workbook.xlsx
+    .writeFile("prueba.xls")
+    .then(() => {
+      console.log("file created");
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+
+  //await workbook.xlsx.writeFile("prueba.xls");
+
+  res.json("success");
 });
 
 app.listen(5000, () => console.log("Server started..."));
