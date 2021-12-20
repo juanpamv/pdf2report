@@ -1,7 +1,7 @@
 const express = require("express");
 const fileUpload = require("express-fileupload");
 var pdf2Text = require("pdf2text");
-const reader = require("xlsx");
+const reader = require("xlsx-style");
 
 const PDFExtract = require("pdf.js-extract").PDFExtract;
 const pdfExtract = new PDFExtract();
@@ -95,12 +95,12 @@ app.get("/generate-file", (req, res) => {
     },
   ];
 
-  const ws = reader.utils.json_to_sheet(student_data);
+  //const ws = reader.utils.json_to_sheet(student_data);
 
-  reader.utils.book_append_sheet(file, ws, "Sheet3");
+  //reader.utils.book_append_sheet(file, ws, "Sheet3");
 
   // Writing to our file
-  reader.writeFile(file, "./test.xlsx", { Props });
+  reader.writeFile(file, "./test.xlsx");
 
   res.json(file);
 });
