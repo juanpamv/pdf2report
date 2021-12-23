@@ -4,7 +4,9 @@ import Progress from "./Progress";
 import axios from "axios";
 import writeXlsxFile from "write-excel-file";
 
-import { gastosMedicosData, columns, vidaData } from "../template/template";
+import { gastosMedicosData, columns } from "../template/gastosTemplate";
+import { dentalData, dentalColumns } from "../template/dentalTemplate";
+import { vidaData, vidaColumns } from "../template/vidaTemplate";
 
 const FileUpload = () => {
   const [file, setFile] = useState([]);
@@ -178,8 +180,8 @@ const FileUpload = () => {
     e.preventDefault();
     //mapData();
 
-    await writeXlsxFile([gastosMedicosData, vidaData, []], {
-      columns: [columns, columns],
+    await writeXlsxFile([gastosMedicosData, vidaData, dentalData], {
+      columns: [columns, vidaColumns, dentalColumns],
       fileName: "Detalle De Coberturas.xlsx",
       sheets: ["Gastos Medicos", "Vida", "Dental"],
     }).then((data) => console.log(data));
@@ -222,6 +224,7 @@ const FileUpload = () => {
         <Progress percentage={uploadPercentage} />
         <div className="d-flex flex-row justify-content-between">
           <input
+            disabled={file.length < 1}
             type="submit"
             value="Subir archivos"
             className="btn btn-primary btn-block mt-4 mr-1"
