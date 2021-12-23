@@ -4,7 +4,7 @@ import Progress from "./Progress";
 import axios from "axios";
 import writeXlsxFile from "write-excel-file";
 
-import { gastosMedicosData, columns } from "../template/template";
+import { gastosMedicosData, columns, vidaData } from "../template/template";
 
 const FileUpload = () => {
   const [file, setFile] = useState([]);
@@ -178,8 +178,8 @@ const FileUpload = () => {
     e.preventDefault();
     //mapData();
 
-    await writeXlsxFile([gastosMedicosData, [], []], {
-      columns,
+    await writeXlsxFile([gastosMedicosData, vidaData, []], {
+      columns: [columns, columns],
       fileName: "Detalle De Coberturas.xlsx",
       sheets: ["Gastos Medicos", "Vida", "Dental"],
     }).then((data) => console.log(data));
