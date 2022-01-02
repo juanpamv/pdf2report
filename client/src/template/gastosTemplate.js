@@ -500,6 +500,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: orange,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #24
@@ -569,6 +570,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #28
@@ -586,6 +588,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #29
@@ -694,6 +697,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #35
@@ -712,6 +716,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #36
@@ -730,6 +735,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #37
@@ -748,6 +754,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #38
@@ -766,6 +773,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "URA",
     },
   ],
   // Row #39
@@ -784,6 +792,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "URA",
     },
   ],
   // Row #40
@@ -836,6 +845,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #43
@@ -853,6 +863,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #44
@@ -887,6 +898,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #46
@@ -904,6 +916,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #47
@@ -921,6 +934,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "80% - 20%",
     },
   ],
   // Row #48
@@ -938,6 +952,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #49
@@ -1042,6 +1057,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Cubierto como complicacion",
     },
   ],
   // Row #55
@@ -1059,6 +1075,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Cubierto como complicacion",
     },
   ],
   // Row #56
@@ -1093,6 +1110,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Incluido en el sublimite de parto",
     },
   ],
   // Row #57
@@ -1110,6 +1128,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Incluido",
     },
   ],
   // Row #58
@@ -1161,6 +1180,7 @@ export const gastosMedicosData = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Inmediatamente",
     },
   ],
   // Row #61
@@ -1303,7 +1323,7 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: lightGray,
-      value: "N/A",
+      value: "$150 al 100%. Periodo de espera 12 meses",
       align: "center",
     },
   ],
@@ -1321,7 +1341,7 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: lightGray,
-      value: "N/A",
+      value: "Ver detalle de cobertura amplio",
       align: "center",
     },
   ],
@@ -1339,7 +1359,7 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: lightGray,
-      value: "N/A",
+      value: "$150 al 80%. Sin periodo de espera",
       align: "center",
     },
   ],
@@ -1357,7 +1377,7 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: lightGray,
-      value: "N/A",
+      value: "Fondo de ojo. Sin periodo de espera",
       align: "center",
     },
   ],
@@ -1696,7 +1716,6 @@ export const gastosMedicosData = [
     {
       backgroundColor: gray,
       value: "Práctica recreativa de buceo",
-      align: "center",
     },
     {
       backgroundColor: lightGray,
@@ -1792,7 +1811,6 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: orange,
-      value: "N/A",
       align: "center",
     },
   ],
@@ -1897,11 +1915,10 @@ export const gastosMedicosData = [
     {
       backgroundColor: gray,
       value: "Preexistencias",
-      align: "center",
     },
     {
       backgroundColor: lightGray,
-      value: "N/A",
+      value: "6 meses",
       align: "center",
     },
   ],
@@ -1982,7 +1999,6 @@ export const gastosMedicosData = [
       value: "",
     },
     {
-      align: "center",
       backgroundColor: white,
       fontWeight: "bold",
       span: 2,
@@ -1999,7 +2015,6 @@ export const gastosMedicosData = [
       value: "",
     },
     {
-      align: "center",
       backgroundColor: white,
       fontWeight: "bold",
       span: 2,
@@ -2461,6 +2476,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "$5.000,00",
     },
   ],
   // Row #25
@@ -2478,6 +2494,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #26
@@ -2513,6 +2530,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #28
@@ -2530,6 +2548,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #29
@@ -2638,6 +2657,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #35
@@ -2656,6 +2676,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #36
@@ -2674,6 +2695,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #37
@@ -2692,6 +2714,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #38
@@ -2710,6 +2733,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "URA",
     },
   ],
   // Row #39
@@ -2728,6 +2752,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "URA",
     },
   ],
   // Row #40
@@ -2780,6 +2805,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #43
@@ -2797,6 +2823,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #44
@@ -2831,6 +2858,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #46
@@ -2848,6 +2876,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #47
@@ -2865,6 +2894,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "80% - 20%",
     },
   ],
   // Row #48
@@ -2882,6 +2912,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Aplica coaseguro",
     },
   ],
   // Row #49
@@ -2952,6 +2983,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #53
@@ -2969,6 +3001,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #54
@@ -2986,6 +3019,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Cubierto como complicacion",
     },
   ],
   // Row #55
@@ -3003,6 +3037,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Cubierto como complicacion",
     },
   ],
   // Row #56
@@ -3020,6 +3055,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #58
@@ -3037,6 +3073,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Incluido en el sublimite de parto",
     },
   ],
   // Row #57
@@ -3054,6 +3091,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #58
@@ -3071,6 +3109,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #59
@@ -3088,6 +3127,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "N/A",
     },
   ],
   // Row #60
@@ -3105,6 +3145,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "Inmediatamente",
     },
   ],
   // Row #61
@@ -3265,7 +3306,7 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: lightGray,
-      value: "N/A",
+      value: "Solo por accidente",
       align: "center",
     },
   ],
@@ -3283,7 +3324,7 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: lightGray,
-      value: "N/A",
+      value: "$150,00",
       align: "center",
     },
   ],
@@ -3640,7 +3681,6 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: gray,
       value: "Práctica recreativa de buceo",
-      align: "center",
     },
     {
       backgroundColor: lightGray,
@@ -3841,11 +3881,10 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: gray,
       value: "Preexistencias",
-      align: "center",
     },
     {
       backgroundColor: lightGray,
-      value: "N/A",
+      value: "6 meses",
       align: "center",
     },
   ],
@@ -3926,7 +3965,6 @@ export const gastosMedicosData2 = [
       value: "",
     },
     {
-      align: "center",
       backgroundColor: white,
       fontWeight: "bold",
       span: 2,
@@ -3943,7 +3981,6 @@ export const gastosMedicosData2 = [
       value: "",
     },
     {
-      align: "center",
       backgroundColor: white,
       fontWeight: "bold",
       span: 2,

@@ -189,13 +189,14 @@ const FileUpload = () => {
         return [key.key, getValue(key)];
       });
 
+      console.log(keys);
       return keys;
     } else {
       map = keys2.map((key, index) => {
         keys2[index].value = getValue(key) || "N/A";
         return [key.key, getValue(key)];
       });
-
+      console.log(keys2);
       return keys2;
     }
   };
@@ -241,15 +242,15 @@ const FileUpload = () => {
     console.log(fileData);
     const procesedData = gastosMedicos.map((data, index) => {
       fileData.map((fileRecord) => {
-        if (fileRecord.id === index) {
+        if (fileRecord.id === index + 2) {
           if (gastosMedicos[index][3]) {
             gastosMedicos[index][3].value = fileRecord.value;
           }
-          console.log("-".repeat(20));
+          /*console.log("-".repeat(20));
           console.log(index);
           console.log(gastosMedicos[index]);
           console.log(fileRecord);
-          console.log("-".repeat(20));
+          console.log("-".repeat(20));*/
         }
       });
 
