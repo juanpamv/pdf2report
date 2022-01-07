@@ -18,14 +18,17 @@ const FileUpload = () => {
   const [uploadedFile, setUploadedFile] = useState({});
   const [message, setMessage] = useState("");
   const [uploadPercentage, setUploadPercentage] = useState(0);
+  const [disableGenerateFile, setDisableGenerateFile] = useState(true);
 
   const [parsedfFiles, setParsedFiles] = useState([]);
   const [fileType, setFileType] = useState(1);
 
   const onChange = (e) => {
-    const files = [...file, e.target.files[0]];
-    setFile(files);
-    setFilename(e.target.files[0].name);
+    if (e.target.files[0]) {
+      const files = [...file, e.target.files[0]];
+      setFile(files);
+      setFilename(e.target.files[0].name);
+    }
   };
 
   const onSubmit = async (e) => {
@@ -68,6 +71,7 @@ const FileUpload = () => {
       Promise.all(promiseArray).then((data) => {
         console.log("ahora si");
         setParsedFiles([...data]);
+        setDisableGenerateFile(false);
       });
     } catch (err) {
       if (err.response.status === 500) {
@@ -109,17 +113,11 @@ const FileUpload = () => {
       { id: 78, key: "Transporte en ambulancia aérea", value: "N/A" }, // 78
       { id: 80, key: "Terapias", value: "N/A" }, // 80
       { id: 81, key: "Tratamiento de Alergias", value: "N/A" }, // 81
-      { id: 20, key: "Costa Rica y Centroamérica", value: "N/A" },
-      { id: 20, key: "Se aplica un coaseguro del", value: "N/A" },
-      {
-        id: 20,
-        key: "Tarifa diaria máxima en unidad de cuidados intensivos",
-        value: "N/A",
-      },
       { id: 84, key: "Trasplante de órganos (Monto Vitalicio)", value: "N/A" }, // 84
       { id: 89, key: "Enfermedades epidémicas o pandémicas", value: "N/A" }, // 89
       { id: 90, key: "Práctica recreativa de buceo", value: "N/A" }, // 90
       { id: 91, key: "Práctica recreativo de fútbol ", value: "N/A" }, // 91
+      { id: 92, key: "Deportes", value: "N/A" }, // 92
       { id: 93, key: "h. Prótesis quirúrgicas", value: "N/A" }, // 93
       { id: 98, key: "Aparatos de apoyo", value: "N/A" }, // 98
       { id: 100, key: "Cuidados en el Hogar", value: "N/A" }, // 100
@@ -133,6 +131,12 @@ const FileUpload = () => {
         value: "N/A",
       }, // 23
       { id: 25, key: "Costa Rica y Centroamérica", value: "N/A" }, //  25
+      { id: 31, key: "Tarifa diaria máxima por cuarto normal", value: "N/A" }, // 31
+      {
+        id: 32,
+        key: "Tarifa diaria máxima en unidad de cuidados intensiv",
+        value: "N/A",
+      }, // 32
       { id: 33, key: "Tarifa diaria máxima por cuarto normal", value: "N/A" }, // 33
       {
         id: 34,
@@ -181,10 +185,8 @@ const FileUpload = () => {
       }, // 102
     ];
 
-    let map;
-
     if (fileType === 1) {
-      map = keys.map((key, index) => {
+      keys.map((key, index) => {
         keys[index].value = getValue(key) || "N/A";
         return [key.key, getValue(key)];
       });
@@ -192,12 +194,61 @@ const FileUpload = () => {
       console.log(keys);
       return keys;
     } else {
-      map = keys2.map((key, index) => {
+      keys2.map((key, index) => {
         keys2[index].value = getValue(key) || "N/A";
         return [key.key, getValue(key)];
       });
+
       console.log(keys2);
       return keys2;
+    }
+  };
+
+  const mapVidaData = () => {
+    const vidaKeys = [
+      { id: 8, key: "Tarifa final", value: "N/A" },
+      { id: 10, key: "Modalidad No Contributiva", value: "N/A" },
+      { id: 11, key: "Monto uniforme: ", value: "N/A" },
+      {
+        id: 18,
+        key: "será de ",
+        value: "N/A",
+      },
+      { id: 21, key: "Más de ¢5.000.000 ", value: "N/A" },
+      { id: 23, key: "Más de ¢75.000.000 ", value: "N/A" },
+    ];
+
+    const vidaKeys2 = [
+      { id: 8, key: "Tarifa final", value: "N/A" },
+      { id: 10, key: "Modalidad No Contributiva", value: "N/A" },
+      { id: 11, key: "Salarios: Equivalente a ", value: "N/A" },
+      {
+        id: 14,
+        key: "En  caso  de  siniestro  la  indemnización  respecto  a  cada  Asegurado  será  hasta  por  la  suma  de",
+        value: "N/A",
+      },
+      {
+        id: 18,
+        key: "Para la cobertura básica de Muerte Plus, el porcentaje a indemnizar para los gastos funerarios ",
+        value: "N/A",
+      },
+      { id: 21, key: "Más de US$10.000  ", value: "N/A" },
+      { id: 23, key: "Más de US $100.000", value: "N/A" },
+    ];
+
+    if (fileType === 1) {
+      vidaKeys.map((key, index) => {
+        vidaKeys[index].value = getValue(key) || "N/A";
+        return [key.key, getValue(key)];
+      });
+
+      return vidaKeys;
+    } else {
+      vidaKeys2.map((key, index) => {
+        vidaKeys2[index].value = getValue(key) || "N/A";
+        return [key.key, getValue(key)];
+      });
+      return vidaKeys2;
     }
   };
 
@@ -214,13 +265,82 @@ const FileUpload = () => {
       return cell.includes(key.key);
     });
 
+    if (
+      key.key === "Tarifa diaria máxima en unidad de cuidados intensiv" &&
+      key.id === 34
+    ) {
+      let counter = 0;
+      for (let index = 0; index < arr.length; index++) {
+        if (
+          arr[index] === "Tarifa diaria máxima en unidad de cuidados intensiv"
+        ) {
+          if (counter === 1) {
+            return arr[index + 2];
+          }
+          counter++;
+        }
+      }
+    }
+
+    if (key.key === "Tarifa diaria máxima por cuarto normal" && key.id === 33) {
+      let counter = 0;
+      for (let index = 0; index < arr.length; index++) {
+        if (arr[index] === "Tarifa diaria máxima por cuarto normal") {
+          if (counter === 1) {
+            return arr[index + 1];
+          }
+          counter++;
+        }
+      }
+    }
+
+    if (key.key === "Tarifa diaria máxima por cuarto normal" && key.id === 31) {
+      let counter = 0;
+      for (let index = 0; index < arr.length; index++) {
+        if (arr[index] === "Tarifa diaria máxima por cuarto normal") {
+          if (counter === 2) {
+            return arr[index + 1];
+          }
+          counter++;
+        }
+      }
+    }
+
+    if (
+      key.key === "Tarifa diaria máxima en unidad de cuidados intensivos" &&
+      key.id === 32
+    ) {
+      let counter = 0;
+      for (let index = 0; index < arr.length; index++) {
+        if (
+          arr[index] === "Tarifa diaria máxima en unidad de cuidados intensivos"
+        ) {
+          if (counter === 2) {
+            return arr[index + 1];
+          }
+          counter++;
+        }
+      }
+    }
+
     if (index === -1) {
       return "N/A";
+    }
+
+    if (key.key === "Modalidad No Contributiva") {
+      return "No Contributiva";
+    }
+    if (key.key === "será de ") {
+      return arr[index + 1].split("¢")[1].split(" (")[0];
+    }
+    if (key.key === "Salarios: Equivalente a ") {
+      return arr[index + 1] + " veces el salario mensual";
     }
 
     if (
       key.key === "Tarifa diaria máxima en unidad de cuidados intensiv" ||
       key.key === "Gastos ambulatorios por accidentes (primeras 24hora" ||
+      key.key === "Gastos por Red de Atención Médica Primaria según an" ||
       key.key === "Gastos por Red de Atención Médica Primaria según an"
     ) {
       return arr[index + 2];
@@ -231,33 +351,40 @@ const FileUpload = () => {
   const onMapClick = async (e) => {
     e.preventDefault();
     const fileData = mapData();
+    const vidaProcesedData = mapVidaData();
 
     let gastosMedicos = gastosMedicosData2;
+    let vida = vidaData;
 
     if (fileType !== 1) {
       gastosMedicos = gastosMedicosData;
-      console.log(gastosMedicos.length);
     }
 
-    console.log(fileData);
-    const procesedData = gastosMedicos.map((data, index) => {
+    gastosMedicos.map((data, index) => {
       fileData.map((fileRecord) => {
         if (fileRecord.id === index + 2) {
           if (gastosMedicos[index][3]) {
             gastosMedicos[index][3].value = fileRecord.value;
           }
-          /*console.log("-".repeat(20));
-          console.log(index);
-          console.log(gastosMedicos[index]);
-          console.log(fileRecord);
-          console.log("-".repeat(20));*/
         }
       });
 
       return;
     });
 
-    await writeXlsxFile([gastosMedicos, vidaData, dentalData], {
+    vida.map((data, index) => {
+      vidaProcesedData.map((fileRecord) => {
+        if (fileRecord.id === index + 1) {
+          if (vida[index][3]) {
+            vida[index][3].value = fileRecord.value;
+          }
+        }
+      });
+
+      return;
+    });
+
+    await writeXlsxFile([gastosMedicos, vida, dentalData], {
       columns: [columns, vidaColumns, dentalColumns],
       fileName: "Detalle De Coberturas.xlsx",
       sheets: ["Gastos Medicos", "Vida", "Dental"],
@@ -307,6 +434,7 @@ const FileUpload = () => {
             className="btn btn-primary btn-block mt-4 mr-1"
           />
           <button
+            disabled={disableGenerateFile}
             onClick={onMapClick}
             className="btn btn-secondary btn-block mt-4 ml-1"
           >

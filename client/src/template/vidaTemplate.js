@@ -69,6 +69,7 @@ export const vidaData = [
       backgroundColor: gray,
       fontWeight: "bold",
       value: "N/A",
+      align: "center",
     },
     {
       value: "",
@@ -101,10 +102,12 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "Industria",
+      fontWeight: "bold",
     },
     {
       backgroundColor: gray,
       value: "N/A",
+      align: "center",
     },
     {
       value: "",
@@ -135,10 +138,12 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "Aseguradora Actual",
+      fontWeight: "bold",
     },
     {
       backgroundColor: gray,
       value: "N/A",
+      align: "center",
     },
     {
       value: "",
@@ -169,6 +174,7 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "Primas",
+      fontWeight: "bold",
     },
     {
       backgroundColor: orange,
@@ -205,10 +211,13 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "Asegurado solo",
+      fontWeight: "bold",
     },
     {
       backgroundColor: gray,
       value: "N/A",
+      align: "center",
+      fontWeight: "bold",
     },
     {
       value: "",
@@ -236,10 +245,12 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "Contribución",
+      fontWeight: "bold",
     },
     {
       backgroundColor: orange,
       value: "",
+      align: "center",
     },
   ],
   // Row #10
@@ -253,10 +264,12 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "Pago de primas empleados",
+      fontWeight: "bold",
     },
     {
       backgroundColor: gray,
       value: "No contributiva",
+      align: "center",
     },
   ],
   // Row #11
@@ -274,6 +287,7 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "24 veces el salario mensual",
+      align: "center",
     },
   ],
   // Row #12
@@ -291,6 +305,7 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "No minimo",
+      align: "center",
     },
   ],
   // Row #13
@@ -308,6 +323,7 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "No suma libre",
+      align: "center",
     },
   ],
   // Row #14
@@ -325,6 +341,7 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "N/A",
+      align: "center",
     },
   ],
   // Row #15
@@ -342,6 +359,7 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "Doble indeminización",
+      align: "center",
     },
   ],
   // Row #16
@@ -359,6 +377,7 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "Incluido",
+      align: "center",
     },
   ],
   // Row #17
@@ -377,6 +396,7 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "50%",
+      align: "center",
     },
   ],
   // Row #18
@@ -394,6 +414,7 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "₡2.000.000,00",
+      align: "center",
     },
   ],
   // Row #19
@@ -411,6 +432,7 @@ export const vidaData = [
     {
       backgroundColor: gray,
       value: "Incluido",
+      align: "center",
     },
   ],
   // Row #20
@@ -440,48 +462,15 @@ export const vidaData = [
     },
     {
       backgroundColor: gray,
-      value: "Periodos de espera/carencia",
-      fontWeight: "bold",
+      value: "Disputabilidad",
     },
     {
-      backgroundColor: orange,
+      backgroundColor: lightGray,
+      value: "1 año",
+      align: "center",
     },
   ],
   // Row #22
-  [
-    {
-      value: "",
-    },
-    {
-      value: "",
-    },
-    {
-      backgroundColor: gray,
-      value: "Disputabilidad",
-    },
-    {
-      backgroundColor: lightGray,
-      value: "1 año",
-    },
-  ],
-  // Row #23
-  [
-    {
-      value: "",
-    },
-    {
-      value: "",
-    },
-    {
-      backgroundColor: gray,
-      value: "Disputabilidad",
-    },
-    {
-      backgroundColor: lightGray,
-      value: "1 año",
-    },
-  ],
-  // Row #24
   [
     {
       value: "",
@@ -496,9 +485,10 @@ export const vidaData = [
     {
       backgroundColor: lightGray,
       value: "1 año",
+      align: "center",
     },
   ],
-  // Row #25
+  // Row #23
   [
     {
       value: "",
@@ -513,9 +503,10 @@ export const vidaData = [
     {
       backgroundColor: lightGray,
       value: "8 años",
+      align: "center",
     },
   ],
-  // Row #26
+  // Row #24
   [
     {
       value: "",
@@ -530,9 +521,10 @@ export const vidaData = [
     {
       backgroundColor: lightGray,
       value: "Sin periodo de espera",
+      align: "center",
     },
   ],
-  // Row #26
+  // Row #25
   [
     {
       value: "",
@@ -547,6 +539,22 @@ export const vidaData = [
       span: 2,
     },
   ],
+  // Row #26
+  [
+    {
+      value: "",
+    },
+    {
+      value: "",
+    },
+    {
+      backgroundColor: white,
+      fontWeight: "bold",
+      span: 2,
+      value:
+        "Corredor de Seguros: Comercial de Seguros Corredores de Seguros S.A.",
+    },
+  ],
   // Row #27
   [
     {
@@ -556,24 +564,6 @@ export const vidaData = [
       value: "",
     },
     {
-      align: "center",
-      backgroundColor: white,
-      fontWeight: "bold",
-      span: 2,
-      value:
-        "Corredor de Seguros: Comercial de Seguros Corredores de Seguros S.A.",
-    },
-  ],
-  // Row #28
-  [
-    {
-      value: "",
-    },
-    {
-      value: "",
-    },
-    {
-      align: "center",
       backgroundColor: white,
       fontWeight: "bold",
       span: 2,

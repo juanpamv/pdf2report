@@ -619,7 +619,6 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Cuarto y Alimentación diario Local",
     },
     {
@@ -637,7 +636,6 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Cuarto y Alimentación diario Internacional",
     },
     {
@@ -655,7 +653,6 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Cuidados  Intensivos Local",
     },
     {
@@ -673,7 +670,6 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Cuidados  Intensivos Internacional",
     },
     {
@@ -710,7 +706,6 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Honorarios del Cirujano",
     },
     {
@@ -729,7 +724,6 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Honorarios  de Cirujano Asistente",
     },
     {
@@ -748,7 +742,6 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Honorarios de Anestesia",
     },
     {
@@ -767,7 +760,6 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Visitas médicas en el hospital- Cuarto Normal",
     },
     {
@@ -786,7 +778,6 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Visitas médicas en el hospital- UCI",
     },
     {
@@ -827,6 +818,7 @@ export const gastosMedicosData = [
     },
     {
       backgroundColor: lightGray,
+      value: "100% en las primeras 24 horas.",
       align: "center",
     },
   ],
@@ -2579,7 +2571,6 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Cuarto y Alimentación diario Local",
     },
     {
@@ -2597,7 +2588,6 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Cuarto y Alimentación diario Internacional",
     },
     {
@@ -2615,7 +2605,6 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Cuidados  Intensivos Local",
     },
     {
@@ -2633,7 +2622,6 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Cuidados  Intensivos Internacional",
     },
     {
@@ -2651,7 +2639,6 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Servicios de Hospital (Misceláneos)",
     },
     {
@@ -2670,7 +2657,6 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Honorarios del Cirujano",
     },
     {
@@ -2689,7 +2675,6 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Honorarios  de Cirujano Asistente",
     },
     {
@@ -2708,7 +2693,6 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Honorarios de Anestesia",
     },
     {
@@ -2727,7 +2711,6 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Visitas médicas en el hospital- Cuarto Normal",
     },
     {
@@ -2746,7 +2729,6 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: gray,
-      fontWeight: "bold",
       value: "Visitas médicas en el hospital- UCI",
     },
     {
@@ -2788,6 +2770,7 @@ export const gastosMedicosData2 = [
     {
       backgroundColor: lightGray,
       align: "center",
+      value: "100% en las primeras 24 horas.",
     },
   ],
   // Row #42
@@ -3776,7 +3759,6 @@ export const gastosMedicosData2 = [
     },
     {
       backgroundColor: orange,
-      value: "N/A",
       align: "center",
     },
   ],
