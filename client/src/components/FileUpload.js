@@ -21,7 +21,7 @@ const FileUpload = () => {
   const [disableGenerateFile, setDisableGenerateFile] = useState(true);
 
   const [parsedfFiles, setParsedFiles] = useState([]);
-  const [fileType, setFileType] = useState(1);
+  const [fileType, setFileType] = useState("1");
 
   const onChange = (e) => {
     if (e.target.files[0]) {
@@ -53,11 +53,9 @@ const FileUpload = () => {
           setTimeout(() => setUploadPercentage(0), 10000);
         },
       });
-
       setMessage("File uploaded");
 
       let promiseArray = [];
-
       res.data.map((file) => {
         const { fileName, filePath } = file;
 
@@ -389,6 +387,15 @@ const FileUpload = () => {
       fileName: "Detalle De Coberturas.xlsx",
       sheets: ["Gastos Medicos", "Vida", "Dental"],
     }).then((data) => console.log(data));
+
+    setFile([]);
+    setFilename("Escoger archivo");
+    setUploadedFile({});
+    setMessage("");
+    setUploadPercentage(0);
+    setDisableGenerateFile(true);
+    setParsedFiles([]);
+    setFileType(null);
   };
 
   return (

@@ -11,7 +11,6 @@ app.use(fileUpload());
 
 app.get("/text/:path", (req, res) => {
   const path = `.${req.params.path.replaceAll("-", "/")}`;
-  console.log(path);
   const options = {
     verbosity: 100,
     disableCombineTextItems: false,
@@ -20,13 +19,13 @@ app.get("/text/:path", (req, res) => {
 
   if (path.includes("ESQUEMA_DE_BENEFICIOS")) {
     pdf2Text(path).then(function (pages) {
-      console.log("tipo 1:");
+      //console.log(1);
       res.json(pages);
     });
   } else {
     pdfExtract.extract(path, options, (err, data) => {
-      console.log("tipo 2:");
       if (err) return console.log(err);
+      //console.log(2);
       res.json(
         data.pages.map((page) =>
           page.content
@@ -47,12 +46,13 @@ app.post("/upload", (req, res) => {
   }
 
   const files = req.files.file0;
-  console.log(files);
+  const date = Date.now();
 
+  console.log(files);
   for (let index = 0; index < files.length; index++) {
     const file = files[index];
 
-    file.mv(`${__dirname}/uploads/${Date.now()}_${file.name}`, (err) => {
+    file.mv(`${__dirname}/uploads/${date}_${file.name}`, (err) => {
       if (err) {
         console.error(err);
         return res.status(500).send(err);
@@ -63,11 +63,12 @@ app.post("/upload", (req, res) => {
 
   const response = files.map((item) => {
     return {
-      fileName: `${Date.now()}_${item.name}`,
-      filePath: `/uploads/${Date.now()}_${item.name}`,
+      fileName: `${date}_${item.name}`,
+      filePath: `/uploads/${date}_${item.name}`,
     };
   });
 
+  console.log(response);
   res.json(response);
 });
 
